@@ -117,7 +117,7 @@ header {
   font-size: 3rem;
   font-weight: bold;
 }
-.nav-link:hover {
+.nav-link:not(.current-page):hover {
   color: #ffe606;
   cursor: pointer;
 }
@@ -300,20 +300,20 @@ header {
   transform: scale(1.1);
 }
 
-.text .section-title {
-  position: relative;
-}
-.text .section-title:after {
+.section-title:after {
   content: "";
-  width: 10%;
-  height: 2px;
+  width: 50px;
+  height: 3px;
   background-color: #ffe606;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: block;
+  margin-top: 10px;
 }
 
-@media screen and (min-width: 700px) {
+.section-title-center::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 750px) {
   .main-grid {
     grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(180px, 320px)) minmax(
         1em,
@@ -387,6 +387,10 @@ header {
   .about-main {
     gap: 4em;
   }
+  .page-title {
+    margin-top: 2em;
+  }
+
   .main-img {
     grid-column: 2;
     width: 100%;
